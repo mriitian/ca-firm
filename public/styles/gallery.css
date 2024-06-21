@@ -1,0 +1,68 @@
+/* Gallery.css */
+
+.gallery-box {
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.row-gallery {
+  display: flex;
+  overflow-x: auto;
+  width: 75vw;
+}
+
+.row-gallery::-webkit-scrollbar{
+  display: none;
+}
+
+.row-gallery .column {
+  flex: 0 0 auto; /* Ensure columns do not shrink and take up their content width */
+  width: 25%;
+  padding: 10px;
+}
+
+.row-gallery .column img {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.row-gallery .column img:hover {
+  opacity: 1;
+}
+
+.gallery-box .container {
+  position: relative;
+  display: none;
+}
+
+.gallery-box .container.show {
+  display: block;
+  width: 50vw;
+}
+
+@media (max-width: 600px) {.gallery-box 
+  .container.show {
+    width: 75vw;
+  }
+}
+
+.gallery-box #imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+.gallery-box .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}

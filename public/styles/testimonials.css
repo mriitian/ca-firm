@@ -1,0 +1,25 @@
+.testimonial-box{
+    background: #031738;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px 20px;
+    align-items: center;
+}
+.testimonial-card{
+    background-color: aliceblue;
+    width: 80%;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.testimonial-card .image{
+    width: 50px;
+    padding: 1px;
+    font-size: xx-large;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 50%;
+}

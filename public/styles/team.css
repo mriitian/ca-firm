@@ -1,0 +1,143 @@
+.team-hero {
+    background: url('../../src/assets/team/team-hero.jpg') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+  }
+  
+  .team-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: brightness(50%);
+    z-index: -1;
+  }
+  
+  .team-title {
+    font-size: 3em;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .team-hero {
+      height: 50vh;
+    }
+  
+    .team-title {
+      font-size: 2.5em;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .team-hero {
+      height: 50vw;
+    }
+  
+    .team-title {
+      font-size: 2em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .team-hero {
+        height: max(40vw, 30vh);
+    }
+  
+    .team-title {
+      font-size: 1.5em;
+    }
+  }
+  
+.team-text{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+.team-text-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    gap: 20px;
+}
+
+.team-text .title{
+    font-size: xx-large;
+    font-weight: 600;
+    color: #3A0CA3;
+}
+.team-text .text{
+    font-size: larger;
+    font-weight: 400;
+    text-align: center;
+}
+
+.team-members-box{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 80%;
+}
+
+.team-members-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.member-card{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 30px;
+    background-color: #130535;
+    padding: 30px;
+    color: aliceblue;
+    box-shadow: 0 5px 10px 0px #00000059;
+}
+
+
+.member-card .member-pic{
+    display: flex;
+}
+.member-card .member-pic .box{
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+}
+.member-card .member-text-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+}
+
+.member-card .member-text-box .member-title{
+    font-size: x-large;
+    font-weight: 500;
+}
+.member-card .member-text-box .member-text{
+    font-size: large;
+}
+
+@media (max-width: 800px) {
+    .member-card{
+        grid-template-columns: auto;
+        row-gap: 30px;
+    }
+}
+@media (max-width: 450px) {
+    .member-card .member-pic .box{
+        width: 80%;
+    }
+}

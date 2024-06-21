@@ -1,0 +1,42 @@
+/* src/Tooltip.css */
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: 150%;
+    right: 100%;
+    transform: translateY(-50%);
+    padding: 10px 10px;
+    background-color: #000000;
+    border-radius: 4px;
+    font-size: 15px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .sign-up button{
+    padding: 2px 20px;
+    background-color: #3A0CA3;
+    color: white;
+    border: none;
+    font-family: Oswald;
+    font-size: larger;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+  }
+  .sign-up button:hover{
+    background-color: aqua;
+    color: black;
+  }
+
+  .tooltip-wrapper:hover .tooltip {
+    opacity: 1;
+  }
+  
