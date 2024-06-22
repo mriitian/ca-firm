@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import TopHead from "./TopHead";
 import logo from "../assets/ca-logo.png";
 import { Link } from "react-router-dom";
 import {AuthOverlay, showSignUpFunc, showLoginFunc } from "./auth/AuthOverlay";
 
 
-function Header() {
+function Header({ onContactButtonClick }) {
   const [showNavbar, setShowNavbar] = useState(false)
 
   const handleShowNavbar = () => {
@@ -30,6 +30,11 @@ function Header() {
     // Cleanup the timer if the component unmounts or if showNavbar changes
     return () => clearTimeout(timer);
   }, [showNavbar]);
+
+  const handleClickContact = () => {
+    onContactButtonClick();
+    handleHideNavbar();
+  }
 
   return (
     <>
@@ -62,7 +67,7 @@ function Header() {
           <div className="nav-option">
             <Link to="/clients">Clients</Link>
           </div>
-          <div className={`contact nav-option ${delayedShow && 'show'}`}>
+          <div className={`contact nav-option ${delayedShow && 'show'}`} onClick={handleClickContact}>
             <button>Contact Us</button>
           </div>
           <div className={`contact nav-option ${delayedShow && 'show'}`} onClick={showSignUpFunc}>
@@ -78,7 +83,7 @@ function Header() {
             <div><i class="fa-solid fa-ellipsis-vertical" style={{fontSize:"x-large", cursor:"pointer"}}></i></div>
           </div>
           </AuthOverlay>
-          <div className="contact">
+          <div className="contact" onClick={onContactButtonClick}>
             <button>Contact Us</button>
           </div>
         </div>
