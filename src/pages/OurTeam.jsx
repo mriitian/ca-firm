@@ -8,7 +8,7 @@ import ContactForm from '../components/ContactForm';
 
 
 
-export default function OurTeam() {
+export default function OurTeam({SetIsLoggedIn, IsLoggedIn, user, SetUser}) {
   const contactFormRef = useRef(null);
 
   const scrollToContactForm = () => {
@@ -18,7 +18,7 @@ export default function OurTeam() {
   };
   return (
     <div>
-        <Header onContactButtonClick={scrollToContactForm} />
+        <Header onContactButtonClick={scrollToContactForm} SetIsLoggedIn={SetIsLoggedIn} IsLoggedIn={IsLoggedIn} SetUser={SetUser} user={user}/>
         <TeamHero />
         <TeamText />
         <TeamMembers />

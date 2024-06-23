@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
 
 
-export default function Services() {
+export default function Services({SetIsLoggedIn, IsLoggedIn, user, SetUser}) {
   const contactFormRef = useRef(null);
 
   const scrollToContactForm = () => {
@@ -16,7 +16,7 @@ export default function Services() {
   };
   return (
     <div>
-        <Header onContactButtonClick={scrollToContactForm} />
+        <Header onContactButtonClick={scrollToContactForm} SetIsLoggedIn={SetIsLoggedIn} IsLoggedIn={IsLoggedIn} SetUser={SetUser} user={user}/>
         <ServiceHero />
         <WhatWeOffer />
         <div ref={contactFormRef}>

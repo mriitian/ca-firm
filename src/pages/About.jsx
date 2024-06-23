@@ -6,7 +6,7 @@ import Gallery from "../components/Gallery";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 
-export default function About() {
+export default function About({SetIsLoggedIn, IsLoggedIn, user, SetUser}) {
   const contactFormRef = useRef(null);
 
   const scrollToContactForm = () => {
@@ -16,7 +16,7 @@ export default function About() {
   };
   return (
     <div>
-      <Header onContactButtonClick={scrollToContactForm} />
+      <Header onContactButtonClick={scrollToContactForm} SetIsLoggedIn={SetIsLoggedIn} IsLoggedIn={IsLoggedIn} SetUser={SetUser} user={user}/>
       <AboutHero />
       <AboutText />
       <Gallery />

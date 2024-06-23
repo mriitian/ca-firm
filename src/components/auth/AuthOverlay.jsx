@@ -8,7 +8,7 @@ import LoginForm from './LoginForm';
 let showSignUpFunc = () => {};
 let showLoginFunc = () => {};
 
-const AuthOverlay = ({ children }) => {
+const AuthOverlay = ({ children, SetIsLoggedIn, IsLoggedIn, SetUser }) => {
   const [visible, setVisible] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
@@ -52,12 +52,12 @@ const AuthOverlay = ({ children }) => {
       )}
       {showSignUp && (
         <div className="modal">
-          <SignupForm onHandleClose={handleClose} />
+          <SignupForm onHandleClose={handleClose} IsLoggedIn={IsLoggedIn} SetIsLoggedIn={SetIsLoggedIn} SetUser={SetUser}/>
         </div>
       )}
       {showLogin && (
         <div className="modal">
-          <LoginForm onHandleClose={handleClose} />
+          <LoginForm onHandleClose={handleClose} IsLoggedIn={IsLoggedIn} SetIsLoggedIn={SetIsLoggedIn} SetUser={SetUser}/>
         </div>
       )}
     </div>

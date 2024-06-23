@@ -6,7 +6,7 @@ import TestimonialContent from '../components/testimonials/TestimonialContent'
 import ContactForm from '../components/ContactForm'
 
 
-export default function Testimonials() {
+export default function Testimonials({SetIsLoggedIn, IsLoggedIn, user, SetUser}) {
   const contactFormRef = useRef(null);
 
   const scrollToContactForm = () => {
@@ -16,7 +16,7 @@ export default function Testimonials() {
   };
   return (
     <div>
-        <Header onContactButtonClick={scrollToContactForm} />
+        <Header onContactButtonClick={scrollToContactForm} SetIsLoggedIn={SetIsLoggedIn} IsLoggedIn={IsLoggedIn} SetUser={SetUser} user={user}/>
         <TestimonialHero />
         <TestimonialContent />
         <div ref={contactFormRef}>

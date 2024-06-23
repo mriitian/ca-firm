@@ -1,23 +1,56 @@
 // src/SignupForm.js
-import React from 'react';
+import React,{useState} from 'react';
+import axios from 'axios';
 
 const SignupForm = ({ onHandleClose }) => {
-  const handleSubmit = (e) => {
+  const [formData, setFormData] = useState({
+    username: '',
+    fname: '',
+    lname: '',
+    email: '',
+    pass1: '',
+    pass2: '',
+  });
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add signup logic here
+    try {
+        const response = await axios.post('http://127.0.0.1:8000/signup/', formData, {
+            headers: {
+                'Content-Type': 'application/json',
+            },     
+      });
+      console.log(response.data);
+      onHandleClose();  
+      // Handle success (e.g., show success message, redirect)
+    } catch (error) {
+      console.error('Error signing up:', error.message);
+      // Handle error (e.g., show error message)
+    }
   };
-  const handleChange = () => {
-
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(e.target.value)
   };
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
         <h4>Signup Form</h4>
         <div className="form-group">
-          <label>First Name*</label>
+          <label>Username*</label>
           <input
             type="text"
-            name="firstName"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>First name*</label>
+          <input
+            type="text"
+            name="fname"
+            value={formData.fname}
             onChange={handleChange}
             required
           />
@@ -26,7 +59,8 @@ const SignupForm = ({ onHandleClose }) => {
           <label>Last Name*</label>
           <input
             type="text"
-            name="lastName"
+            name="lname"
+            value={formData.lname}
             onChange={handleChange}
             required
           />
@@ -36,6 +70,7 @@ const SignupForm = ({ onHandleClose }) => {
           <input
             type="email"
             name="email"
+            value={formData.email}
             onChange={handleChange}
             required
           />
@@ -44,25 +79,18 @@ const SignupForm = ({ onHandleClose }) => {
           <label>Password*</label>
           <input
             type="password"
-            name="password"
+            name="pass1"
+            value={formData.pass1}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group">
-          <label>Company*</label>
+          <label>Confirm Password*</label>
           <input
-            type="text"
-            name="company"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Phone Number*</label>
-          <input
-            type="tel"
-            name="phone"
+            type="password"
+            name="pass2"
+            value={formData.pass2}
             onChange={handleChange}
             required
           />

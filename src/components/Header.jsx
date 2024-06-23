@@ -1,18 +1,26 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect} from "react";
 import TopHead from "./TopHead";
 import logo from "../assets/ca-logo.png";
 import { Link } from "react-router-dom";
 import {AuthOverlay, showSignUpFunc, showLoginFunc } from "./auth/AuthOverlay";
+import Profile from "./auth/Profile";
+import '../../public/styles/modal.css'
 
 
-function Header({ onContactButtonClick }) {
+function Header({ onContactButtonClick, SetIsLoggedIn, IsLoggedIn, SetUser, user }) {
   const [showNavbar, setShowNavbar] = useState(false)
+
+  const [showProfile, setShowProfile] = useState(false);
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar)
   }
   const handleHideNavbar = () => {
     setShowNavbar(false)
+  }
+
+  const handleShowProfile = () => {
+    setShowProfile(true);
   }
 
   const [delayedShow, setDelayedShow] = useState(false);
@@ -34,6 +42,10 @@ function Header({ onContactButtonClick }) {
   const handleClickContact = () => {
     onContactButtonClick();
     handleHideNavbar();
+  }
+
+  const handleCloseProfile = () => {
+    setShowProfile(false);
   }
 
   return (
@@ -78,11 +90,14 @@ function Header({ onContactButtonClick }) {
           </div>
         </div>
         <div className="header-buttons">
-          <AuthOverlay>
+          {!IsLoggedIn ? (<AuthOverlay IsLoggedIn={IsLoggedIn} SetIsLoggedIn={SetIsLoggedIn} SetUser={SetUser}>
           <div className="contact">
             <div><i class="fa-solid fa-ellipsis-vertical" style={{fontSize:"x-large", cursor:"pointer"}}></i></div>
           </div>
-          </AuthOverlay>
+          </AuthOverlay>) : 
+          (<div className="contact" onClick={handleShowProfile}>
+             <i className="fa-solid fa-user"></i>
+          </div>)}
           <div className="contact" onClick={onContactButtonClick}>
             <button>Contact Us</button>
           </div>
@@ -91,6 +106,13 @@ function Header({ onContactButtonClick }) {
         <div className="menu-icon" onClick={handleShowNavbar}>
           <i class="fa-solid fa-bars" style={{fontSize:"30px"}}></i>
         </div>
+
+        {showProfile && (
+        <div className="modal">
+          <Profile IsLoggedIn={IsLoggedIn} SetIsLoggedIn={SetIsLoggedIn} SetUser={SetUser} user={user} handleClose={handleCloseProfile}/>
+        </div>
+      )}
+
       </header>
     </>
   );

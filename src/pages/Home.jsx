@@ -6,7 +6,7 @@ import ServicesSection from '../components/ServicesSection';
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
 
-export default function Home() {
+export default function Home({SetIsLoggedIn, IsLoggedIn, user, SetUser}) {
   const contactFormRef = useRef(null);
 
   const scrollToContactForm = () => {
@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div>
-      <Header onContactButtonClick={scrollToContactForm} />
+      <Header onContactButtonClick={scrollToContactForm} SetIsLoggedIn={SetIsLoggedIn} IsLoggedIn={IsLoggedIn} SetUser={SetUser} user={user}/>
       <HeroSection />
       <CompanyProfile />
       <ServicesSection />

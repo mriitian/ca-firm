@@ -12,12 +12,12 @@
 }
 
 
-  .contact-form .buttons{
+.modal .contact-form .buttons{
     display: flex;
     gap: 20px;
   }
   
-  .contact-form .close-button {
+  .modal .contact-form .close-button {
     background-color: #dc3545;
     color: #fff;
     border: none;
@@ -27,7 +27,21 @@
     border: none;
     border-radius: 4px;
   }
-  .contact-form .buttons .submit-button{
+  .modal .contact-form .buttons .submit-button{
     background-color: #0b8300;
   }
   
+
+  .modal .profile-box{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: min(600px, 70vw);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .modal .profile-box button{
+    background-color: #dc3545;
+    width: 50%;
+  }
