@@ -82,12 +82,12 @@ function Header({ onContactButtonClick, SetIsLoggedIn, IsLoggedIn, SetUser, user
           <div className={`contact nav-option ${delayedShow && 'show'}`} onClick={handleClickContact}>
             <button>Contact Us</button>
           </div>
-          <div className={`contact signup nav-option ${delayedShow && 'show'}`} onClick={showSignUpFunc}>
+          {IsLoggedIn (<div className={`contact signup nav-option ${delayedShow && 'show'}`} onClick={showSignUpFunc}>
             <button>SignUp</button>
-          </div>
-          <div className={`contact login nav-option ${delayedShow && 'show'}`} onClick={showLoginFunc}>
+          </div>)}
+          {IsLoggedIn && (<div className={`contact login nav-option ${delayedShow && 'show'}`} onClick={showLoginFunc}>
             <button>Login</button>
-          </div>
+          </div>)}
         </div>
         <div className="header-buttons">
           {!IsLoggedIn ? (<AuthOverlay IsLoggedIn={IsLoggedIn} SetIsLoggedIn={SetIsLoggedIn} SetUser={SetUser}>
