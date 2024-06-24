@@ -41,7 +41,16 @@
     padding: 20px;
     border-radius: 8px;
   }
+  .modal .profile-box .button{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 10px;
+  }
   .modal .profile-box button{
     background-color: #dc3545;
-    width: 50%;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: larger;
   }

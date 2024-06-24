@@ -82,10 +82,10 @@ function Header({ onContactButtonClick, SetIsLoggedIn, IsLoggedIn, SetUser, user
           <div className={`contact nav-option ${delayedShow && 'show'}`} onClick={handleClickContact}>
             <button>Contact Us</button>
           </div>
-          <div className={`contact nav-option ${delayedShow && 'show'}`} onClick={showSignUpFunc}>
+          <div className={`contact signup nav-option ${delayedShow && 'show'}`} onClick={showSignUpFunc}>
             <button>SignUp</button>
           </div>
-          <div className={`contact nav-option ${delayedShow && 'show'}`} onClick={showLoginFunc}>
+          <div className={`contact login nav-option ${delayedShow && 'show'}`} onClick={showLoginFunc}>
             <button>Login</button>
           </div>
         </div>
@@ -95,17 +95,24 @@ function Header({ onContactButtonClick, SetIsLoggedIn, IsLoggedIn, SetUser, user
             <div><i class="fa-solid fa-ellipsis-vertical" style={{fontSize:"x-large", cursor:"pointer"}}></i></div>
           </div>
           </AuthOverlay>) : 
-          (<div className="contact" onClick={handleShowProfile}>
-             <i className="fa-solid fa-user"></i>
+          (<div className="contact" onClick={handleShowProfile} style={{cursor:'pointer', border:'1px solid black', borderRadius:'50%'}}>
+             <i className="fa-solid fa-user" style={{padding:'10px 11px', fontSize:'x-large'}}></i>
           </div>)}
           <div className="contact" onClick={onContactButtonClick}>
             <button>Contact Us</button>
           </div>
         </div>
-        
-        <div className="menu-icon" onClick={handleShowNavbar}>
-          <i class="fa-solid fa-bars" style={{fontSize:"30px"}}></i>
+        <div className="responsive-buttons">
+          <div className="menu-icon" onClick={handleShowNavbar}>
+            <i class="fa-solid fa-bars" style={{fontSize:"30px"}}></i>
+          </div>
+          {IsLoggedIn && (
+            <div className="user" onClick={handleShowProfile} style={{cursor:'pointer', border:'1px solid black', borderRadius:'50%'}}>
+                <i className="fa-solid fa-user" style={{padding:'10px 11px', fontSize:'x-large'}}></i>
+            </div>
+          )}
         </div>
+        
 
         {showProfile && (
         <div className="modal">

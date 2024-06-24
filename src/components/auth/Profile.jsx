@@ -28,7 +28,9 @@ const Profile = ({ SetIsLoggedIn, user, SetUser, handleClose}) => {
       <h2>Profile</h2>
       <h5>Welcome, {user.username}</h5>
       <h5>Email: {user.email}</h5>
-      <button onClick={handleSignout}>Logout</button>
+      <div className="button">
+        <button onClick={handleSignout}>Logout</button>
+      </div>
     </div>
   );
 };
