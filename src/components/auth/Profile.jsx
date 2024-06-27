@@ -20,6 +20,10 @@ const Profile = ({ SetIsLoggedIn, user, SetUser, handleClose}) => {
     }
   };
 
+  const handleCloseProfile = () => {
+    handleClose();
+  }
+
   const handleClick = () => {
     console.log(user)
   }
@@ -30,6 +34,7 @@ const Profile = ({ SetIsLoggedIn, user, SetUser, handleClose}) => {
       <h5>Email: {user.email}</h5>
       <div className="button">
         <button onClick={handleSignout}>Logout</button>
+        <button onClick={handleCloseProfile}>Close</button>
       </div>
     </div>
   );
