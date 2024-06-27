@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react'
 import axios from 'axios';
 
 
-export default function AppointmentForm() {
+export default function AppointmentForm({user}) {
     const [availableSlots, setAvailableSlots] = useState({});
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedSlot, setSelectedSlot] = useState('');
@@ -21,7 +21,7 @@ export default function AppointmentForm() {
 
   const fetchAvailableSlots = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/get_available_slots', {
+      const response = await axios.get(`http://127.0.0.1:8000/get_available_slots/`, {
         params: {
           date: selectedDate || undefined,
         },
@@ -43,6 +43,8 @@ export default function AppointmentForm() {
         appointment_time: selectedSlot,
       });
       console.log('Appointment booked successfully:', response.data);
+      console.log(user.username);
+      alert(`Appointment Booked Successfully, ${user.username != undefined ? "" : "Login with the username to get the appointments"}`);
       // Optionally, you can reset form fields or show a success message
     } catch (error) {
         if (error.response) {

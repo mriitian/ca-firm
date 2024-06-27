@@ -35,7 +35,7 @@ const LoginForm = ({onHandleClose, SetIsLoggedIn, IsLoggedIn, SetUser}) => {
     <form className="contact-form" onSubmit={handleSubmit}>
         <h4>Login Form</h4>
         <div className="form-group">
-          <label>Email*</label>
+          <label>Username*</label>
           <input
             type="text"
             name="username"
