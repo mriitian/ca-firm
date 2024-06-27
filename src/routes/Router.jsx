@@ -6,6 +6,7 @@ import Services from "../pages/Services";
 import OurTeam from "../pages/OurTeam";
 import Testimonials from "../pages/Testimonials";
 import Profile from "../components/auth/Profile";
+import Appointment from "../pages/Appointment";
 
 function Router() {
 
@@ -23,6 +24,7 @@ function Router() {
       <Route path="/team" element={<OurTeam SetIsLoggedIn={SetIsLoggedIn} IsLoggedIn={IsLoggedIn} user = {user} SetUser={SetUser}/>} />
       <Route path="/testimonials" element={<Testimonials SetIsLoggedIn={SetIsLoggedIn} IsLoggedIn={IsLoggedIn} user = {user} SetUser={SetUser}/>} />
       <Route path="/profile" element={<Profile SetIsLoggedIn={SetIsLoggedIn} IsLoggedIn={IsLoggedIn} user = {user} SetUser={SetUser}/>} />
+      <Route path="/appointment" element={<Appointment SetIsLoggedIn={SetIsLoggedIn} IsLoggedIn={IsLoggedIn} user = {user} SetUser={SetUser}/>} />
     </Routes>
   );
 }

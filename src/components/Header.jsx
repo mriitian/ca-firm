@@ -77,7 +77,7 @@ function Header({ onContactButtonClick, SetIsLoggedIn, IsLoggedIn, SetUser, user
             <Link to="/testimonials">Testimonials</Link>
           </div>
           <div className="nav-option">
-            <Link to="/clients">Clients</Link>
+            <Link to="/appointment">Book Appointment</Link>
           </div>
           <div className={`contact nav-option ${delayedShow && 'show'}`} onClick={handleClickContact}>
             <button>Contact Us</button>
