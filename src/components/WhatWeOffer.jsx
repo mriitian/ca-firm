@@ -2,7 +2,7 @@ import React from 'react'
 import ServiceComponent from './ServiceComponent';
 
 export default function WhatWeOffer() {
-    const services = Array.from({ length: 12 }, (_, index) => index);
+    const services = Array.from({ length: 6 }, (_, index) => index);
     return (
         <>
             <div className="we-offer">
