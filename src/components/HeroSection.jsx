@@ -1,12 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import firmData from './data';
 
+function HeroSection({onContactButtonClick}) {
 
-function HeroSection() {
+  const onHandleClickContact = () => {
+    onContactButtonClick();
+  }
+
   return (
     <section className="hero">
       <div className="hero-content">
-        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-        <button>Know More</button>
+        <h1>{firmData.welcomeMessage.title}</h1>
+        <button onClick={onHandleClickContact} >Know More</button>
       </div>
     </section>
   );

@@ -1,0 +1,23 @@
+.wcu-item{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+    justify-content: center;
+    background: #0000005c;
+    border: 1px solid white;
+    padding: 20px;
+    width: 100%;
+}
+
+.wcu-item .name{
+    font-size: x-large;
+    color: aliceblue;
+    font-family: "Karla", sans-serif;
+}
+.wcu-item .desc{
+    font-size: larger;
+    font-weight: 300;
+    color: aliceblue;
+    font-family: "Karla", sans-serif;
+}

@@ -1,23 +1,24 @@
 import React from 'react'
 import testimonials from './TestimonialData'
 import '../../../public/styles/testimonials.css'
+import firmData from '../data'
 
 export default function TestimonialContent() {
   return (
     <div className='testimonial-box'>
 
-        {testimonials.map(testimonial => (
-            <div key={testimonial.id} className="testimonial-card">
+        {firmData.clientTestimonials.testimonials.map((testimonial, index) => (
+            <div key={index} className="testimonial-card">
                 <div className="image">
                     <i class="fa-solid fa-user"></i>
                 </div>
                     <div className="stars">
-                        <span>{testimonial.stars}</span>
+                        <span>⭐⭐⭐⭐⭐</span>
                     </div>
                 <div className="testimonial-content">
-                    <h4>{testimonial.company}</h4>
-                    <h5>{testimonial.name}</h5>
-                    <p>"{testimonial.text}"</p>
+                    <h4>{testimonial.clientCompany}</h4>
+                    <h5>{testimonial.clientName} - {testimonial.clientPosition}</h5>
+                    <p>"{testimonial.quote}"</p>
                 </div>
             </div>
         ))}

@@ -3,7 +3,7 @@ import MemberCard from './MemberCard';
 import '../../../public/styles/team.css'
 
 export default function TeamMembers() {
-    const team_members = Array.from({ length: 12 }, (_, index) => index);
+    const team_members = Array.from({ length: 4 }, (_, index) => index);
     return (
         <div className="team-members-container">
             <h2>Team Members</h2>

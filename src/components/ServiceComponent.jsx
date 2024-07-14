@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
-export default function ServiceComponent() {
+export default function ServiceComponent({title, desc}) {
 
 
   return (
       <div className="card">
         <div className="content">
           <div className="icon">💼</div>
-          <div className="title">Service Title</div>
+          <div className="title">{title}</div>
           <div className="description">
-            Service description goes here. Explain what the service offers.
+            {desc}
           </div>
         </div>
         <div className="overlay">

@@ -1,17 +1,22 @@
 import React from "react";
+import firmData from "./data";
+import Item from "./whychooseus/item";
+
 
 function ServicesSection() {
   return (
-    <section className="services">
-      <div className="services-item title">
-        <h2>Unmatched Services. Unmatched Excellence</h2>
+    <div className="services-bx">
+      <div className="title">
+        <h2>{firmData.whyChooseUs.title}</h2>
       </div>
-      <div className="services-item"></div>
-      <div className="services-item"></div>
-      <div className="services-item"></div>
-      <div className="services-item"></div>
-      <div className="services-item"></div>
-    </section>
+      <section className="services">
+        {
+          firmData.whyChooseUs.points.map((e, index) => {
+           return <Item name={e.name} desc={e.description}/>
+})
+        }
+      </section>
+    </div>
   );
 }
 

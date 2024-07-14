@@ -18,7 +18,7 @@ export default function Home({SetIsLoggedIn, IsLoggedIn, user, SetUser}) {
   return (
     <div>
       <Header onContactButtonClick={scrollToContactForm} SetIsLoggedIn={SetIsLoggedIn} IsLoggedIn={IsLoggedIn} SetUser={SetUser} user={user}/>
-      <HeroSection />
+      <HeroSection onContactButtonClick={scrollToContactForm} />
       <CompanyProfile />
       <ServicesSection />
       <div ref={contactFormRef}>
