@@ -13,7 +13,7 @@ function ServicesSection() {
         {
           firmData.whyChooseUs.points.map((e, index) => {
            return <Item name={e.name} desc={e.description}/>
-})
+          })
         }
       </section>
     </div>

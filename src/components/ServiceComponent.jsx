@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 export default function ServiceComponent({title, desc}) {
 
@@ -13,7 +14,7 @@ export default function ServiceComponent({title, desc}) {
           </div>
         </div>
         <div className="overlay">
-          <button className="learn-more">Learn More</button>
+          { <button className="learn-more"><Link to={`/services${/*title.toLowerCase().replace(" ", "-")*/""}`}>See More</Link></button>}
         </div>
       </div>
   )
